@@ -12,6 +12,8 @@ from sklearn.preprocessing import StandardScaler
 
 import streamlit as st
 
+st.title("Leak Area identification by multiparameter analysis of related factors and real-time analysis with Machine Learning")
+
 data = pd.read_csv('Daily water Consumption data NEW.csv')
 data['Date'] = pd.to_datetime(data['Date'])
 
