@@ -12,7 +12,7 @@ from sklearn.preprocessing import StandardScaler
 
 import streamlit as st
 
-st.title("Anomaly Detection using Machine Learning")
+st.markdown("<h1 style='text-align: center; color: red;'>Anomaly Detection using Machine Learning</h1>", unsafe_allow_html=True)
 
 data = pd.read_csv('Daily water Consumption data NEW.csv')
 data['Date'] = pd.to_datetime(data['Date'])
