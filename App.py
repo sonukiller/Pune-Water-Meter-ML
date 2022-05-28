@@ -120,7 +120,7 @@ output = output.append(temp, ignore_index=True)
 output.set_index('Date', inplace=True)
 
 # plot value on y-axis and date on x-axis
-fig = px.line(output, x=output.index, y="Consumption", title='Anomaly Detection', template = 'plotly_dark')
+fig = px.line(output, x=output.index, y="Consumption", title=None, template = 'plotly_dark')
 # create list of outlier_dates
 outlier_dates = output[output['Anomaly'] == True].index
 # obtain y value of anomalies to plot
