@@ -14,7 +14,7 @@ from sklearn.preprocessing import StandardScaler
 
 import streamlit as st
 
-data = pd.read_csv('Excel Files/Daily water Consumption data NEW.csv')
+data = pd.read_csv('Daily water Consumption data NEW.csv')
 data['Date'] = pd.to_datetime(data['Date'])
 
 def week_of_month(day):
@@ -27,7 +27,7 @@ data['Day_of_week'] = data['Date'].dt.dayofweek
 data['Week_of_month'] = data['Day'].apply(week_of_month)
 
 # Adding the pipe size to the data
-pipe_size = pd.read_csv('Excel Files/ Pipe_size.csv', usecols = ['Meter', 'Pipe size'])
+pipe_size = pd.read_csv('Pipe_size.csv', usecols = ['Meter', 'Pipe size'])
 data = pd.merge(data, pipe_size, on='Meter')
 
 # PCA
@@ -142,7 +142,7 @@ else:
 st.plotly_chart(fig)
 
 # Location
-df_map = pd.read_csv('Excel Files/gps.csv')
+df_map = pd.read_csv('gps.csv')
 df_map.rename(columns={'METER_ADDRESS':'Meter'}, inplace=True)
 
 # center on Liberty Bell
